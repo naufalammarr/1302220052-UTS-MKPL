@@ -52,26 +52,26 @@ public class Employee {
 	 * Jika pegawai adalah warga negara asing gaji bulanan diperbesar sebanyak 50%
 	 */
 	
-	 public void setMonthlySalary(int grade) {
-		switch (grade) {
-			case 1:
-				monthlySalary = 3000000;
-				break;
-			case 2:
-				monthlySalary = 5000000;
-				break;
-			case 3:
-				monthlySalary = 7000000;
-				break;
-			default:
-				throw new IllegalArgumentException("Grade tidak valid: " + grade);
-		}
-	
-		if (isForeigner) {
-			monthlySalary *= 1.5;
-		}
-	}
-	
+	public void setMonthlySalary(int grade) {
+    switch (grade) {
+        case 1:
+            monthlySalary = 3000000;
+            break;
+        case 2:
+            monthlySalary = 5000000;
+            break;
+        case 3:
+            monthlySalary = 7000000;
+            break;
+        default:
+            throw new IllegalArgumentException("Grade tidak valid: " + grade);
+    }
+
+    if (isForeigner) {
+        monthlySalary *= 1.5;
+    }
+}
+
 	
 	public void setAnnualDeductible(int deductible) {	
 		this.annualDeductible = deductible;
@@ -83,8 +83,9 @@ public class Employee {
 	
 	public void setSpouse(String spouseName, String spouseIdNumber) {
 		this.spouseName = spouseName;
-		this.spouseIdNumber = idNumber;
+		this.spouseIdNumber = spouseIdNumber; // Bug fixed
 	}
+	
 	
 	public void addChild(String childName, String childIdNumber) {
 		childNames.add(childName);
